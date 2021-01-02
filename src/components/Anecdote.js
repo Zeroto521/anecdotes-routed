@@ -11,15 +11,12 @@ const AnecdoteTitle = ({ anecdote }) => (
   </div>
 )
 
-const AnecdoteDetail = ({ anecdote }) => {
-  console.log(anecdote)
-  return (
-    <div>
-      <h2>{anecdote.content} by {anecdote.author}</h2>
-      <div>has {anecdote.votes} votes</div>
-      <br />
-    </div>
-  )
-}
+const AnecdoteDetail = ({ anecdote }) => (
+  <div>
+    <h2>{anecdote.content} by {anecdote.author}</h2>
+    <div>has {anecdote.votes} votes</div>
+    <br />
+  </div>
+)
 
 export { AnecdoteTitle, AnecdoteDetail }
