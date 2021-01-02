@@ -22,20 +22,29 @@ const CreateNew = (props) => {
     history.push('/')
   }
 
+  const reset = () => {
+    content.reset()
+    author.reset()
+    url.reset()
+  }
+
   return (
     <div>
       <h2>create a new anecdote</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          content <input {...content} />
+          content <input type={content.type} value={content.value} onChange={content.onChange} />
         </div>
         <div>
-          author <input {...author} />
+          author <input type={author.type} value={author.value} onChange={author.onChange} />
         </div>
         <div>
-          url <input {...url} />
+          url <input type={url.type} value={url.value} onChange={url.onChange} />
         </div>
-        <button>create</button>
+        <div>
+          <button type='submit'>create</button>
+          <button type='button' onClick={reset}>reset</button>
+        </div>
       </form>
     </div>
   )
