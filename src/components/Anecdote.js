@@ -11,10 +11,10 @@ const AnecdoteTitle = ({ anecdote }) => (
   </div>
 )
 
-const AnecdoteDetail = ({ anecdote }) => (
+const AnecdoteDetail = ({ anecdote, vote }) => (
   <div>
     <h2>{anecdote.content} by {anecdote.author}</h2>
-    <div>has {anecdote.votes} votes</div>
+    <div>has {anecdote.votes} votes <button onClick={() => vote(anecdote.id)}>vote</button> </div>
     <br />
   </div>
 )
