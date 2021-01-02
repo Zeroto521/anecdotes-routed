@@ -50,9 +50,8 @@ const App = () => {
 
   const notifyWith = (message) => {
     setNotification(message)
-    setTimeout(() => setNotification(null), 10000)
+    setTimeout(() => setNotification(null), 3000)
   }
-
 
   const match = useRouteMatch('/anecdotes/:id')
   const anecdote = match
@@ -66,7 +65,7 @@ const App = () => {
       <Notification message={notification} />
       <Switch>
         <Route path="/anecdotes/:id">
-          <AnecdoteDetail anecdote={anecdote} vote={vote} />
+          <AnecdoteDetail anecdote={anecdote} vote={vote} notifyWith={notifyWith} />
         </Route>
         <Route path="/create">
           <CreateNew addNew={addNew} notifyWith={notifyWith} />
